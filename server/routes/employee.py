@@ -52,3 +52,22 @@ async def update_employee_data(id: str, req: UpdateEmployeeModel = Body(...)):
         404,
         "There was an error updating the Employee data.",
     )
+@router.delete("/{id}", response_description="Employee data deleted from the database")
+async def delete_employee_data(id: str):
+    deleted_employee = await delete_employee(id)
+    if deleted_employee:
+        return ResponseModel(
+            "Employee with ID: {} removed".format(id), "Employee deleted successfully"
+        )
+    return ErrorResponseModel(
+        "An error occurred", 404, "Employee with id {0} doesn't exist".format(id)
+    )
+
+
+@router.post("/", response_description="Employee data retrieved after sorting")
+async def get_sorted_employee_data(key: str, order: int):
+    employee = await sort_employee(key,order)
+    if employee:
+        return ResponseModel(employee, "Employee data sorted after retrieving successfully")
+    return ErrorResponseModel("An error occurred.", 404, "Employee doesn't exist.")
+
