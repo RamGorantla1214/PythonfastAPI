@@ -1,1 +1,9 @@
-# PythonfastAPI
+                                        Ram Gopal Gorantla
+                                        10615890
+                              
+                              
+  In this project we have an webpage which integrates with application of fast api framework and interact with mongodb database for doing certain tasks. The tasks are adding an employee details in db, updating employee details for a particular emp_id, sorting all employee documents based on salary field, searching for an particular employee for a given employee id and getting all the employees.
+  
+  
+  Ram contributed the work regarding creating an app, creating models and data validations . In app file , creating an fastapi object and calling to routes menthod. And then running a server of unicorn so that all the tasks regarding to mongodb can be possible. 
+  Moreover, In models file , created an employee.py file. In this file he implemented Schema of an employee i.e, how the data should be in db while inserting the data via api. And some responsemodels and response message methods. This methods are responsible for giving clear understanding of response and error in case if we get. In data validation , for every field in schema there are some rules which has to be followed while doing crud operations. creating an api’s for 5 different usecases. Namely, creating an employee, reterive employee, reterive all employees, updating employee, deleting employee. And responsible for routing api’s to other method which are mongodb method implemented all creud operations. And while implementing this api method , calling to responsemodel and errorresponsemodel. So that in api swagger ui , we can see the response message and error response message. Here implement get, put, post methods of api’s. while taking the parameters via swagger UI docs , it gives required fields and optional fileds with their description.
